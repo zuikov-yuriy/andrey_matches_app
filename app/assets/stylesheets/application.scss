@@ -1,0 +1,136 @@
+@import "uikit/variables-theme.scss";
+@import "uikit/mixins-theme.scss";
+@import "uikit/uikit-theme.scss";
+
+h1 {
+  font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 32px;
+  color: #555555;
+}
+
+.matches-box {
+  width: 1200px;
+  margin: 50px 0 0 30px;
+ 
+  table.matches {
+
+    @mixin _subtitle {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    tbody{
+      tr {
+        td{
+
+          padding: 10px 5px 10px 5px;
+          height: 100px;
+
+          &:nth-child(1) {width: 10%;}
+          &:nth-child(2) {width: 20%;}
+          &:nth-child(3) {width: 10%;}
+          &:nth-child(4) {width: 10%;}
+          &:nth-child(5) {width: 10%;}
+          &:nth-child(6) {width: 20%;}
+          &:nth-child(7) {width: 12%;}
+
+          img.home-team-logo, 
+          img.away-team-logo {
+            max-width: 44px;
+            max-height: 44px;
+            width: auto;
+            height: auto;
+            margin: 0 4px;
+          }
+
+          div.subtitle {
+            @include _subtitle;
+          }
+
+          div.qty{
+            text-align: center;
+            span.down, span.up {
+              cursor: pointer;
+            }
+          }
+
+        }
+      }
+    }
+    span.teams-title {
+      font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial';
+      font-weight: 700;
+      color: #0099FF;
+    }
+    span.game-title {
+      font-family: 'ArialMT', 'Arial';
+      font-weight: 400;
+      color: #999999;
+    }
+    span.middle-col-title {
+      font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial';
+      font-weight: 700;
+      color: #555555;
+    }    
+    img.round-star {
+      position: absolute;
+      top: -30px;
+      right: 0px;
+      float:right;
+      width: 22px;
+      height: 22px;
+      margin: 5px;
+      z-index: auto;
+     }
+    div.price {
+      float: right;
+      font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial';
+      font-weight: 700;
+      font-style: normal;
+      font-size: 18px;
+      color: #30C287;
+    }
+
+  }
+}
+.display-block {
+  display: inline-block
+}
+.foot-add-minutes {
+
+}
+.minus-btn {
+  background-color: lightgrey;
+  border-radius: 5px 0px 0px 5px;
+}
+.plus-btn {
+  background-color: lightgrey;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.foot-line {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.checkout-default-notice {
+  font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  color: #555555;
+  text-align: right;
+  line-height: 18px;
+}
+.proceed-btn {
+  border-radius: 5px;
+  background-color: #30C287;
+  text-align: right;
+  margin-left: 15px;
+  
+}
+div.checkout-block {
+  background-color: lightgrey;
+}

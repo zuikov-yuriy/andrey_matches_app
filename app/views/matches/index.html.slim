@@ -1,0 +1,81 @@
+div.matches-box  data-controller="game"
+  h1 Games
+  span.st-res.display-block data-target="game.output"
+
+  table.uk-table.uk-table-hover.uk-table-middle.uk-table-divider.matches
+    tbody
+      - @matches.each_with_index do |match,index|
+        tr
+          td
+            img.home-team-logo src="#{match.home_team_logo}"/
+            img.away-team-logo src="#{match.away_team_logo}"/
+          td
+            div.title
+            span.teams-title 
+              = match.title
+            div.game-time
+            span.game-title
+              = match.game_time.strftime('%b %d, %Y %H:%M')
+          td
+            div.reach
+            span.middle-col-title
+              = match.reach
+              | M
+            div.subtitle
+              | Reach
+          td
+            div.league
+            span.middle-col-title
+              = match.league
+            div.subtitle
+              | League
+          td
+            div.channel
+            span.middle-col-title
+              = match.channel
+            div.subtitle
+              | Channel
+          td
+            div.price
+              = match.price_per_minute
+              | /min
+          td
+           
+            div.qty
+           
+              div class="uk-button-group"
+                - if index == 1
+                    img class="round-star"  src="/images/round-star.png"
+
+                button class="uk-button uk-button-default minus-btn" onclick="down(#{match.id});"
+                  |-              
+                button class="uk-button uk-button-secondary" id="quantity_minutes_#{match.id}"
+                  |0
+                /button class="uk-button uk-button-default plus-btn"  data-action="click->game#up" data-match_id="#{match.id}"
+                button class="uk-button uk-button-default plus-btn"  onclick="up(#{match.id});"
+                  |+
+            
+                         
+             
+
+  div.checkout-block.uk-grid
+    div.uk-grid-medium.uk-width-1-2
+    div.uk-grid-medium.uk-width-1-2
+      div.uk-align-right.uk-flex-inline.uk-align-center.foot-line
+        table
+          tbody
+            tr 
+              td align="center"                     
+                  span.checkout-default-notice.display-block.checkout-notice
+                    | Add minutes to your campaign
+                  / span.checkout-notice.uk-align-center.display-block
+                  /   |
+                  
+                  
+              td align="center"
+                button class="uk-button uk-button-default proceed-btn" onclick="alert('pressed')"
+                  |Proceed to checkout
+
+
+
+
